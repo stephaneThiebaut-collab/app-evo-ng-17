@@ -1,0 +1,44 @@
+@import '../../../../variable.scss';
+/*================================================
+404 Error Area CSS
+=================================================*/
+.error-content {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 700px;
+
+    h3 {
+        font: {
+            size: 35px;
+        }
+        margin: {
+            top: 10px;
+            bottom: 18px;
+        }
+    }
+    p {
+        max-width: 520px;
+        margin: 0 auto 20px;
+        line-height: 30px;
+    }
+    .default-btn-one {
+        display: inline-block;
+        padding: 12px 30px;
+        background: $main-color;
+        border: 1px solid $main-color;
+        color: $white-color;
+        font-size: 16px;
+        font-weight: 400;
+        transition: .6s;
+        margin-right: 0;
+
+        &:hover {
+            text-decoration: none;
+            background-color: $white-color;
+            color: $main-color;
+        }
+    }
+}
+a {
+    cursor: pointer!important;
+}

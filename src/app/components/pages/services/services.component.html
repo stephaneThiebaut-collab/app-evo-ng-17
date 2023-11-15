@@ -1,0 +1,131 @@
+@defer {
+    <app-navbar></app-navbar>
+
+<div class="page-title-area item-bg2">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-title-content">
+                    <h1 class="color-white">Nos Services</h1>
+                    <ul>
+                        <li><a routerLink="/">Accueil</a></li>
+                        <li>Nos Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="services-section pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-services-box">
+                    <div class="icon">
+                        <i class="flaticon-big-data"></i>
+                    </div>
+                    <h2>Création d'Applications Web et Sites Web</h2>
+                    <p>Notre équipe de développeurs expérimentés est prête à transformer votre vision en réalité avec des sites web et des applications web sur mesure.</p>
+                    <div class="services-btn">
+                        <a routerLink="/services-details" class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-services-box">
+                    <div class="icon">
+                        <i class="flaticon-data-analytics"></i>
+                    </div>
+                    <h2>Optimisation SEO (Search Engine Optimization)</h2>
+                    <p>Améliorez la visibilité de votre site web dans les moteurs de recherche et attirez davantage de visiteurs qualifiés grâce à notre expertise en optimisation SEO.</p>
+                    <div class="services-btn">
+                        <a routerLink="/services-details" class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-services-box">
+                    <div class="icon">
+                        <i class="flaticon-document"></i>
+                    </div>
+                    <h2>Création d'API (Interfaces de Programmation d'Applications)</h2>
+                    <p>Simplifiez l'intégration de vos systèmes et services avec des interfaces de programmation d'applications (API) puissantes.</p>
+                    <div class="services-btn">
+                        <a routerLink="/services-details" class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-services-box">
+                    <div class="icon">
+                        <i class="flaticon-chart"></i>
+                    </div>
+                    <h2>Refonte d'Applications Web et Sites Web</h2>
+                    <p>Modernisez et améliorez votre présence en ligne avec l'aide de notre équipe de spécialistes pour donner une nouvelle vie à votre site web ou à votre application existante.</p>
+                    <div class="services-btn">
+                        <a routerLink="/services-details" class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-services-box">
+                    <div class="icon">
+                        <i class="flaticon-science"></i>
+                    </div>
+                    <h2>Création de Dashboards</h2>
+                    <p>Visualisez vos données clés en temps réel grâce à des tableaux de bord personnalisés et obtenez des insights précieux pour prendre des décisions éclairées.</p>
+                    <div class="services-btn">
+                        <a routerLink="/services-details" class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-services-box">
+                    <div class="icon">
+                        <i class="flaticon-data-management"></i>
+                    </div>
+                    <h2>Mise à jour et Ajout de Fonctionnalités</h2>
+                    <p>Gardez votre site web ou votre application à jour avec les dernières technologies en assurant la maintenance et en ajoutant de nouvelles fonctionnalités.</p>
+                    <div class="services-btn">
+                        <a routerLink="/services-details" class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="software-section pb-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="software-content">
+                    <span>Nos Services</span>
+                    <h2>Développement d'Applications Web</h2>
+                    <p>Offrant une gamme complète de services pour répondre à vos besoins en développement d'applications web. Notre équipe de professionnels passionnés est prête à créer des solutions web exceptionnelles pour votre entreprise.</p>
+                    <ul class="features-list">
+                        <li><span>Conception et Développement de Sites Web</span></li>
+                        <li><span>Applications Web Personnalisées</span></li>
+                        <li><span>Intégration de Bases de Données</span></li>
+                        <li><span>Optimisation de la Performance</span></li>
+                        <li><span>Création d'Interfaces Utilisateur Conviviales</span></li>
+                        <li><span>Services de Maintenance et de Mise à Jour</span></li>
+                        <li><span>Mise à jour et Ajout de Fonctionnalités</span></li>
+                        <li><span>Assistance Technique</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="software-image">
+                    <img src="assets/img/software.png" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-subscribe></app-subscribe>
+} @loading {
+    <app-loader></app-loader>
+}
