@@ -13,17 +13,6 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <!-- <li class="nav-item"><a routerLink="/" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Home One</a></li>
-
-                            <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/home-two" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Home Two</a></li>
-
-                            <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/home-three" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Home Three</a></li>
-
-                            <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/home-four" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Home Four</a></li>
-                        </ul>
-                    </li>  -->
 
                     <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/about" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">A propos</a></li>
 
@@ -35,64 +24,21 @@
                         </ul>
                     </li>
 
-                    <!-- <li class="nav-item"><a routerLink="/" class="nav-link">Pages <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/team" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Team</a></li>
-
-                            <li class="nav-item"><a routerLink="/projects" class="nav-link">Projects</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/projects" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Projects</a></li>
-        
-                                    <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/projects-details" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Projects Details</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/pricing" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Pricing</a></li>
-
-                            <li class="nav-item"><a routerLink="/shop" class="nav-link">Shop</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/shop" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Shop</a></li>
-                                    
-                                    <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/products-details" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Single Products</a></li>
-
-                                    <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/cart" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Cart</a>
-                                    </li>
-                                    
-                                    <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/checkout" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Checkout</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/partner" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Partner</a></li>
-
-                            <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/error" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">404 Error</a></li>
-                        </ul>
-                    </li> -->
-
-                    <!-- <li class="nav-item"><a routerLink="/blog-grid" class="nav-link">Blog <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/blog-grid" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Blog Grid</a></li>
-
-                            <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/blog-right-sidebar" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Blog Right Sidebar</a></li>
-
-                            <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/blog-details" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Blog Details</a></li>
-                        </ul>
-                    </li> -->
-
                     <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/contact" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Contact</a></li>
-                    <li *ngIf="this.ongletConnection == false" class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/profil" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Connection / Inscription</a></li>
-                    <!-- <li *ngIf="this.ongletConnection == true" class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/profil" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">test</a></li> -->
-                    <li *ngIf="this.ongletConnection == true" class="nav-item"><a class="nav-link">Compte <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/profil/page-profil" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Page profil</a></li>
 
-                            <li (click)="deconnection()" class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Deconnection</a></li>
-                        </ul>
-                    </li>
+                    @if (this.ongletConnection == false) {
+                        <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/espace-client" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Espace client</a></li>
+                    } @else {
+                        <li class="nav-item"><a class="nav-link">Compte <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/profil/page-profil" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Page profil</a></li>
+    
+                                <li (click)="deconnection()" class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Deconnection</a></li>
+                            </ul>
+                        </li>
+                    }
                 </ul>
 
-                <!-- <div class="other-option">
-                    <a class="default-btn" routerLink="/contact">Free Quote <span></span></a>
-                </div> -->
             </div>
         </nav>
     </div>

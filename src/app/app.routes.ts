@@ -6,11 +6,13 @@ import { ServicesComponent } from './components/pages/services/services.componen
 import { ServicesDetailComponent } from './components/pages/services-detail/services-detail.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 
+
 export const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'about', component: AboutComponent},
     {path: 'services', component: ServicesComponent},
     {path: 'services-details', component: ServicesDetailComponent},
     {path: 'contact', component: ContactComponent},
+    {path: 'espace-client', loadChildren: () => import('./components/pages/espace-client/espace-client-route.module').then(m => m.EspaceClientRoute )},
     {path: '**', component: ErrorComponent}
 ];

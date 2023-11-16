@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, LoaderComponent, NavbarComponent, FooterComponent, DirectiveHomeLinkExplicatifHomePage, SubscribeComponent],
+  imports: [CommonModule, LoaderComponent, NavbarComponent, FooterComponent, SubscribeComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

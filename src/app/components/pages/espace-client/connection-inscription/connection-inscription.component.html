@@ -1,0 +1,140 @@
+@defer {
+    <app-navbar></app-navbar>
+<div class="main-banner-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="main-banner-content">
+                            <h1>Page profil</h1>
+                            <p class="w-100">
+                                Inscription / Connection
+                            </p>
+                            <p>
+                                Vous souhaitez nous contacter pour la création d'un projet ou demander un devis ? Vous avez des questions ou des besoins de mise à jour ? Créez un profil. Toutes les communications par e-mail seront référencées sur votre page de profil pour un meilleur suivi. Les e-mails seront envoyés à votre boîte de réception et enregistrés dans votre espace client, y compris les réponses et le suivi correspondant.
+                            </p>
+                            <div class="banner-btn">
+                                <a class="default-btn-one" routerLink="/">Home<span></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="creative-shape"><img src="assets/img/main-banner-shape/1.png" alt="main-image"></div>
+    <div class="shape-img1"><img src="assets/img/main-banner-shape/2.png" alt="image"></div>
+    <div class="shape-img2"><img src="assets/img/main-banner-shape/3.png" alt="image"></div>
+
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</div>
+
+@if (isLoading){
+<app-loader></app-loader>
+}
+<section class="tab-section ptb-100">
+    <div class="container">
+        <div class="tab solutions-list-tab">
+            <ul class="tabs">
+                <!-- <li><a href="#"><span>Création app / site Web</span></a></li> -->
+                <li (click)="affichageConnection()"><a><span>Connection</span></a></li>
+                <li (click)="affichageInscription()"><a><span>Inscription</span></a></li>
+                <!-- <li><a href="#"><span>Assistance et conseil</span></a></li> -->
+            </ul>
+            <div class="tab_content">
+                
+                @if (seeConnection) {
+                    <div id="connection" class="tabs_item">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7 col-md-12">
+                                <div class="tab-solution-content">
+                                    <h3>Connection</h3>
+                                    <div class="contact-section ptb-100">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="contact-form">
+                                                        <form [formGroup]="connectionUser" (ngSubmit)="connectionSubmit()">
+                                                            <div class="form-group mb-3">
+                                                                <input type="email" name="email" class="form-control" placeholder="Email" formControlName="email">
+                                                            </div>
+                                                            <div class="form-group mb-3">
+                                                                <input type="password" name="password" class="form-control" placeholder="Mot de passe" formControlName="password">
+                                                            </div>
+                                                            
+                                                            <div>
+                                                                <a (click)="passwordForget()" class="color-blue">Mot de passe oubliée ?</a>
+                                                            </div>
+                                                            <br>
+                                                            <div class="form-group mb-3">
+                                                                <button type="submit" class="submit-btn">Connection</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+                @if (seeInscription) {
+                    <div id="inscription" class="tabs_item">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7 col-md-12">
+                                <div class="tab-solution-content">
+                                    <h3>Inscription</h3>
+                                    <div class="contact-section ptb-100">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="contact-form">
+                                                        <form [formGroup]="inscriptionUser" (ngSubmit)="inscriptionSubmit()">
+                                                            <div class="form-group mb-3">
+                                                                <input type="email" name="email" class="form-control" placeholder="Email" formControlName="email">
+                                                            </div>
+                                                            <div class="form-group mb-3">
+                                                                <input type="password" name="password" class="form-control" placeholder="Mot de passe" formControlName="password">
+                                                            </div>
+                                                            <div class="form-group mb-3">
+                                                                <input type="password" name="confirm_password" class="form-control" placeholder="Confimer votre mot de passe" formControlName="confirm_password">
+                                                            </div>
+                                                            <div class="form-group mb-3">
+                                                                <input type="text" name="name" class="form-control" placeholder="Nom" formControlName="name">
+                                                            </div>
+                                                            <div class="form-group mb-3">
+                                                                <input type="text" name="last_name" class="form-control" placeholder="Prenom" formControlName="last_name">
+                                                            </div>
+                                                            <div class="form-group mb-3">
+                                                                <button [disabled]="!inscriptionUser.valid" type="submit" class="submit-btn">Inscription</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            
+        </div>
+    </div>
+</section>
+} @loading {
+    <app-loader></app-loader>
+} 

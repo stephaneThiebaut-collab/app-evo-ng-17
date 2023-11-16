@@ -1551,6 +1551,12 @@ Tabs Solutions Section CSS
                     margin-top: 0;
                 }
             }
+            &.current, &:hover {
+                a {
+                    background-color: $main-color;
+                    color: $white-color;
+                }
+            }
         }
     }
     .tab_content {

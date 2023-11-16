@@ -40,13 +40,13 @@ export class SubscribeComponent {
       message: this.sendEmail.value.message
     }
 
-    // if (this.sendEmail.valid && emailRdv.name && emailRdv.email && emailRdv.tel && emailRdv.message) {
-    //   this.RUS.postRendezVousByEmail(emailRdv.name, emailRdv.email, emailRdv.tel, emailRdv.message).subscribe(data => {
-    //     alert(data.message)
-    //   }, error => {
-    //     alert(error.message)
-    //   })
-    // }
+    if (this.sendEmail.valid && emailRdv.name && emailRdv.email && emailRdv.tel && emailRdv.message) {
+      // this.RUS.postRendezVousByEmail(emailRdv.name, emailRdv.email, emailRdv.tel, emailRdv.message).subscribe((data: { message: any; }) => {
+      //   alert(data.message)
+      // }, (error: { message: any; }) => {
+      //   alert(error.message)
+      // })
+    }
   }
   constructor(private fb: FormBuilder){}
 }
