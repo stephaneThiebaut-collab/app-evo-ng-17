@@ -68,9 +68,13 @@ export class ConnectionInscriptionComponent {
       this.userService.userConnection(user.email, user.password).subscribe((data: { message: any; token: string; admin: boolean;}) => {
 
         alert(data.message);
-        if (data.message) {
-          this.isLoading = false
+
+        if (data.token) {
+          localStorage.setItem("token", `${data.token}`);
+          this.router.navigateByUrl('espace-client/ticket')
         }
+        console.log(data)
+        this.isLoading = false
 
       }, (err: { message: any; }) => {
         this.isLoading = false

@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, catchError, concatMap, throwError } from 'rxjs';
 
@@ -6,21 +6,13 @@ import { Observable, Subject, catchError, concatMap, throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  private url: string = `https://get-evolutif.xyz/login1`;
-  // private url: string = `http://localhost:3000/login1`;
-  private loaderSubject = new Subject<boolean>();
-  loader$ = this.loaderSubject.asObservable();
+  // private url: string = `https://get-evolutif.xyz/login1`;
+  private url: string = `http://localhost:3000/login1`;
 
   userConnection(email: string, password: string): Observable<any> {
-    // this.loaderSubject.next(true);
     return this.http.post<any>(`${this.url}/connection`, { email, password })
       .pipe(
         catchError(this.handleError),
-        // concatMap(response => {
-        //   this.loaderSubject.next(false);
-        //   console.log(response)
-        //   return response;
-        // })
       );
   }
   userInscription(email: string, password: string, confirmPassword: string, name: string, last_name: string): Observable<any> {
@@ -29,34 +21,42 @@ export class UserService {
         catchError(this.handleError)
       );
   }
-  // getToken(): any {
-  //   if (localStorage.getItem("token")) {
-  //     return localStorage.getItem("token");
-  //   }
-  // }
   AllTicket(): Observable<any> {
-    return this.http.get<any>(`${this.url}/ticket/all-devis`)
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    });
+    return this.http.get<any>(`${this.url}/ticket/all-devis`, { headers })
       .pipe(
         catchError(this.handleError)
       );
   }
 
   getOneTicket(id: string): Observable<any> {
-    return this.http.get<any>(`${this.url}/ticket/one-ticket/${id}`)
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    });
+    console.log(localStorage.getItem('token'))
+    return this.http.get<any>(`${this.url}/ticket/one-ticket/${id}`,  {headers} )
       .pipe(
         catchError(this.handleError)
       );
   }
 
   getReponseTicket(id: string): Observable<any> {
-    return this.http.get<any>(`${this.url}/ticket/get-response-ticket/${id}`)
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    });
+    return this.http.get<any>(`${this.url}/ticket/get-response-ticket/${id}`, { headers })
       .pipe(
         catchError(this.handleError)
       );
   }
 
   postReponseTicket(id: string, message: string): Observable<any> {
-    return this.http.post<any>(`${this.url}/ticket/reponse-ticket/${id}`, { message })
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    });
+    return this.http.post<any>(`${this.url}/ticket/reponse-ticket/${id}`, { message }, {headers})
       .pipe(
         catchError(this.handleError)
       );
@@ -70,7 +70,10 @@ export class UserService {
   }
 
   postCreateTicket(object_ticket: number, descriptif: string): Observable<any> {
-    return this.http.post<any>(`${this.url}/ticket/create-ticket`, { object_ticket, descriptif })
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    });
+    return this.http.post<any>(`${this.url}/ticket/create-ticket`, { object_ticket, descriptif }, { headers })
       .pipe(
         catchError(this.handleError)
       );
@@ -101,5 +104,19 @@ export class UserService {
     // Return an observable with a user-facing error message.
     return throwError(() => new Error(error.error.message));
   }
+  chooseOption: Array<{ id: number, title: string }> = [
+    { id: 1, title: 'Creation de site web' },
+    { id: 2, title: 'Creation d\'application web' },
+    { id: 3, title: 'Mise a jour de site web' },
+    { id: 4, title: 'Mise a jour d\'application web' },
+    { id: 5, title: 'Creation d\'api' },
+    { id: 6, title: 'Mise a jour d\'api' },
+    { id: 7, title: 'Reforge de site web' },
+    { id: 8, title: 'Reforge d\'application web' },
+    { id: 9, title: 'Reforge d\'api' },
+    { id: 10, title: 'Optimisation web (SEO)' },
+    { id: 11, title: 'Je ne sais pas encore' },
+    {id: 12, title: 'Ajout de fonctionnalité'}
+  ];
   constructor(private http: HttpClient) { }
 }

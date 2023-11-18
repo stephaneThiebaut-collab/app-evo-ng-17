@@ -11,5 +11,6 @@ import { SubscribeComponent } from '../../layout/subscribe/subscribe.component';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
+  documentCompletedLoaded: any = document.readyState;
   email: string = 'contact@get-evolutif.xyz';
 }

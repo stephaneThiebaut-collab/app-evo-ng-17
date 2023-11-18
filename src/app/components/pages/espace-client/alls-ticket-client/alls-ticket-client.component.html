@@ -1,0 +1,110 @@
+@defer (when loadedCompleted) {
+
+<app-navbar></app-navbar>
+
+<div class="page-title-area item-bg2">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-title-content">
+                    <h2>Cart</h2>
+                    <ul>
+                        <li><a routerLink="/">Home</a></li>
+                        <li>Cart</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="cart-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+
+                <div class="cart-table table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">N°</th>
+                                <th scope="col">Descriptif</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (tickets of ticket; track tickets.uuid_ticket) {
+                            <tr (click)="goToTicket(tickets.uuid_ticket)">
+                                <td  class="product-price">
+                                    <span  class="unit-amount">
+                                        {{tickets.object_service}}
+                                    </span>
+                                </td>
+                                <td class="product-price">
+                                    <span class="unit-amount">
+                                        {{tickets.uuid_ticket}}
+                                    </span>
+                                </td>
+                                <td class="product-price">
+                                    <span class="unit-amount">
+                                        {{tickets.descriptif}}
+                                    </span>
+                                </td>
+                            </tr>
+                            } @empty {
+                            <p>Aucun ticket pour le moment</p>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+
+                <div>
+                    <button (click)="toggleForm()" class="default-btn custum-cursor">Crée un ticket</button>
+                    @if (FormIsVisible) {
+                        <div>
+                            <form [formGroup]="createTicket" id="contactForm" (submit)="onSubmit()">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-group mb-3">
+                                            <br>
+                                            <select (change)="addValueToForm($event)"
+                                                style="height: 55px; border-radius: 2px; outline: none;" class="w-100">
+                                                <option value="">--Choissisez une option--</option>
+                                                
+                                                @for (chooseOptions of chooseOption; track chooseOptions.id) {
+                                                    <option value='{{chooseOptions.id}}'> {{chooseOptions.title}} </option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group mb-3">
+                                            <textarea name="message" class="form-control" id="message" cols="30" rows="6"
+                                                placeholder="Votre message" formControlName="descriptif"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <button type="submit" class="default-btn custum-cursor">Envoyer maintenant</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    }
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+}
+@placeholder {
+<span>Placeholder</span>
+}
+@error {
+<span>Error</span>
+}
+@loading(minimum 3s) {
+<app-loader></app-loader>
+}

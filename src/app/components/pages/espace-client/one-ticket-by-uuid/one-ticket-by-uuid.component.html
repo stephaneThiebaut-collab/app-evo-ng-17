@@ -1,0 +1,95 @@
+@defer (when documentLoadedCompleted){
+    
+<app-navbar></app-navbar>
+
+<div class="page-title-area item-bg4">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-title-content">
+                    <h2>Blog Details</h2>
+                    <ul>
+                        <li><a routerLink="/">Home</a></li>
+                        <li>Blog Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="blog-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="blog-details-desc">
+                    <!-- <div class="article-image">
+                        <img src="assets/img/blog-details/2.jpg" alt="image">
+                    </div> -->
+                    <div class="article-content">
+                        <!-- <div class="entry-meta">
+                            <ul>
+                                <li><span>Posted On:</span> <a routerLink="/">September 31, 2023</a></li>
+                                <li><span>Posted By:</span> <a routerLink="/">John Anderson</a></li>
+                            </ul>
+                        </div> -->
+                        <h3> {{object_service}} </h3>
+                        <p>
+                            {{descriptif}}
+                        </p>
+                    </div>
+                    <div class="comments-area">
+                        <h3 class="comments-title"> {{nbrReponse}} Message(s):</h3>
+                        <ol class="comment-list">
+                            <li class="comment">
+                                @for (dataReponses of dataReponse; track dataReponses.id) {
+                                    <article class="comment-body">
+                                        <footer class="comment-meta">
+                                            <div class="comment-author vcard">
+                                                <!-- <img src="assets/img/client/1.jpg" class="avatar" alt="image"> -->
+                                                <b class="fn"> {{dataReponses.name}} {{dataReponses.last_name}} 
+                                                    
+                                                    @if (dataReponses.admin == true) {
+                                                        <span >(Admin)</span> 
+                                                    }
+                                                </b>
+                                                <span class="says">says:</span>
+                                            </div>
+                                            <div class="comment-metadata">
+                                                <a routerLink="/"><time>April 24, 2023 at 10:59 am</time></a>
+                                            </div>
+                                        </footer>
+                                        <div class="comment-content">
+                                            <p>
+                                                {{dataReponses.reponse}}
+                                            </p>
+                                        </div>
+                                    </article>
+                                }
+                            </li>
+                        </ol>
+                        <div class="comment-respond">
+                            <h3 class="comment-reply-title">Repondre / Envoyer un message</h3>
+                            <form [formGroup]="sendMessageTicket" (ngSubmit)="submitMessageTicket()"
+                                class="comment-form">
+                                <!-- <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span>Required fields are marked <span class="required">*</span></p> -->
+                                <p class="comment-form-comment">
+                                    <label>Message</label>
+                                    <textarea name="comment" id="comment" cols="45" rows="5" maxlength="65525"
+                                        required="required" formControlName="message"></textarea>
+                                </p>
+                                <p class="form-submit">
+                                    <input type="submit" name="submit" id="submit" class="submit" value="Post Comment">
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @loading (minimum 3s) {
+    <app-loader></app-loader>
+}

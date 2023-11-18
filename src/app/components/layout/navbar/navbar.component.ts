@@ -26,7 +26,7 @@ export class NavbarComponent {
     if (localStorage.getItem('token')) {
       localStorage.removeItem("token");
       alert("Vous avez été deconnecter");
-      this.router.navigateByUrl('')
+      this.router.navigateByUrl('/')
     }
   }
   constructor(private router: Router) {}
