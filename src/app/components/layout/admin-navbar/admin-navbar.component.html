@@ -1,0 +1,46 @@
+<div class="navbar-area">
+    <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <a class="navbar-brand" routerLink="/">
+                <!-- <img src="assets/img/logo.png" class="white-logo" alt="logo"> -->
+                <!-- <img src="assets/img/logo-black.png" class="black-logo" alt="logo"> -->
+                <h1>Evolutif</h1>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/about" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">A propos</a></li>
+
+                    <li class="nav-item"><a routerLink="/services" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/services" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Services</a></li>
+
+                            <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/services-details" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Services Details</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/contact" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Contact</a></li>
+                    @if (this.ongletConnection == false){
+                        <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/espace-client" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Espace client</a></li>
+                    }
+                    @if (this.ongletConnection == true) {
+                        <li class="nav-item"><a class="nav-link">Admin<i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a routerLink="/admin/admin-all-ticket" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Page Admin</a></li>
+    
+                                <li (click)="deconnection()" class="nav-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><a class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Deconnection</a></li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+</div>

@@ -10,11 +10,13 @@ import { NavbarComponent } from '../../../layout/navbar/navbar.component';
 import { LoaderComponent } from '../../../layout/loader/loader.component';
 import { Ticket } from '../../../../interface/ticket';
 import { DirectiveHomeLinkExplicatifHomePage } from '../../../../directive/directive-style.directive';
+import { ErrorChargementComponent } from '../../error-chargement/error-chargement.component';
+import { FooterComponent } from '../../../layout/footer/footer.component';
 
 @Component({
   selector: 'app-alls-ticket-client',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, ReactiveFormsModule, HttpClientModule, LoaderComponent, DirectiveHomeLinkExplicatifHomePage],
+  imports: [CommonModule, NavbarComponent, ReactiveFormsModule, HttpClientModule, LoaderComponent, DirectiveHomeLinkExplicatifHomePage, ErrorChargementComponent, FooterComponent],
   providers: [UserService],
   templateUrl: './alls-ticket-client.component.html',
   styleUrl: './alls-ticket-client.component.scss',

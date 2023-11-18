@@ -6,6 +6,8 @@ import { UserService } from '../../../../service/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from '../../../layout/loader/loader.component';
 import { NavbarComponent } from '../../../layout/navbar/navbar.component';
+import { ErrorChargementComponent } from '../../error-chargement/error-chargement.component';
+import { FooterComponent } from '../../../layout/footer/footer.component';
 
 
 @Injectable()
@@ -13,7 +15,7 @@ import { NavbarComponent } from '../../../layout/navbar/navbar.component';
   selector: 'app-connection-inscription',
   standalone: true,
   providers: [UserService],
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, LoaderComponent, NavbarComponent],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, LoaderComponent, NavbarComponent, ErrorChargementComponent, FooterComponent],
   templateUrl: './connection-inscription.component.html',
   styleUrl: './connection-inscription.component.scss'
 })
