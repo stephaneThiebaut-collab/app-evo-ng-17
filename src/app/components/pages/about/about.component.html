@@ -1,4 +1,45 @@
 @defer {
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "AboutPage",
+            "name": "À propos de nous",
+            "description": "Votre Partenaire de Confiance en Développement Web",
+            "image": "https://e-evolutif.fr/assets/img/productive.png",
+            "about": {
+                "@type": "Organization",
+                "name": "evolutif",
+                "description": "Nous sommes une équipe de développeurs web passionnés dédiés à fournir des solutions de première classe pour votre présence en ligne. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus vel facilisis."
+            },
+            "services": [
+                {
+                    "@type": "WebDevelopmentService",
+                    "name": "Développement de Sites Web Personnalisés",
+                    "description": "Nous proposons des services de développement de sites web sur mesure pour répondre à vos besoins spécifiques."
+                },
+                {
+                    "@type": "ECommerceService",
+                    "name": "Solutions E-commerce",
+                    "description": "Optimisez votre présence en ligne avec nos solutions e-commerce pour stimuler votre activité."
+                },
+                {
+                    "@type": "ResponsiveDesignService",
+                    "name": "Conception Réactive",
+                    "description": "Notre équipe assure la conception réactive pour garantir une expérience utilisateur optimale sur tous les appareils."
+                },
+                {
+                    "@type": "ContentManagementService",
+                    "name": "Systèmes de Gestion de Contenu",
+                    "description": "Gérez facilement votre contenu en ligne avec nos systèmes de gestion de contenu performants."
+                }
+            ],
+            "cta": {
+                "@type": "ContactPage",
+                "name": "Contactez-nous",
+                "url": "https://e-evolutif.fr/contact"
+            }
+        }
+    </script>
     <app-navbar></app-navbar>
 
 <div class="page-title-area">
@@ -72,7 +113,7 @@
         </div>
     </div>
 </section>
-
+<app-footer></app-footer>
 } @loading(minimum 1s) {
     <app-loader></app-loader>
 } @error {

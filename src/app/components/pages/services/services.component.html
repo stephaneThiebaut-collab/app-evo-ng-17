@@ -1,4 +1,74 @@
 @defer {
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "ServicePage",
+            "name": "Nos Services",
+            "description": "Découvrez nos services de développement web sur mesure pour répondre à vos besoins spécifiques.",
+            "image": "https://e-evolutif.fr/assets/img/software.png",
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@id": "https://e-evolutif.fr/",
+                            "name": "Accueil"
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@id": "https://e-evolutif.fr/services",
+                            "name": "Nos Services"
+                        }
+                    }
+                ]
+            },
+            "mainEntity": {
+                "@type": "ItemList",
+                "itemListElement": [
+                    {
+                        "@type": "Service",
+                        "name": "Création d'Applications Web et Sites Web",
+                        "description": "Notre équipe de développeurs expérimentés est prête à transformer votre vision en réalité avec des sites web et des applications web sur mesure."
+                    },
+                    {
+                        "@type": "Service",
+                        "name": "Optimisation SEO (Search Engine Optimization)",
+                        "description": "Améliorez la visibilité de votre site web dans les moteurs de recherche et attirez davantage de visiteurs qualifiés grâce à notre expertise en optimisation SEO."
+                    },
+                    {
+                        "@type": "Service",
+                        "name": "Création d'API (Interfaces de Programmation d'Applications)",
+                        "description": "Simplifiez l'intégration de vos systèmes et services avec des interfaces de programmation d'applications (API) puissantes."
+                    },
+                    {
+                        "@type": "Service",
+                        "name": "Refonte d'Applications Web et Sites Web",
+                        "description": "Modernisez et améliorez votre présence en ligne avec l'aide de notre équipe de spécialistes pour donner une nouvelle vie à votre site web ou à votre application existante."
+                    },
+                    {
+                        "@type": "Service",
+                        "name": "Création de Dashboards",
+                        "description": "Visualisez vos données clés en temps réel grâce à des tableaux de bord personnalisés et obtenez des insights précieux pour prendre des décisions éclairées."
+                    },
+                    {
+                        "@type": "Service",
+                        "name": "Mise à jour et Ajout de Fonctionnalités",
+                        "description": "Gardez votre site web ou votre application à jour avec les dernières technologies en assurant la maintenance et en ajoutant de nouvelles fonctionnalités."
+                    }
+                ]
+            },
+            "cta": {
+                "@type": "ContactPage",
+                "name": "Contactez-nous",
+                "url": "https://e-evolutif.fr/contact"
+            }
+        }
+    </script>
     <app-navbar></app-navbar>
 
 <div class="page-title-area item-bg2">
@@ -27,8 +97,8 @@
                     </div>
                     <h2>Création d'Applications Web et Sites Web</h2>
                     <p>Notre équipe de développeurs expérimentés est prête à transformer votre vision en réalité avec des sites web et des applications web sur mesure.</p>
-                    <div class="services-btn">
-                        <a routerLink="/services-details" class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
+                    <div class="services-btn" (click)="readMoreInfo('creationDappWeb')">
+                        <a  class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -39,8 +109,8 @@
                     </div>
                     <h2>Optimisation SEO (Search Engine Optimization)</h2>
                     <p>Améliorez la visibilité de votre site web dans les moteurs de recherche et attirez davantage de visiteurs qualifiés grâce à notre expertise en optimisation SEO.</p>
-                    <div class="services-btn">
-                        <a routerLink="/services-details" class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
+                    <div class="services-btn" (click)="readMoreInfo('SEOApp')">
+                        <a class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -51,8 +121,8 @@
                     </div>
                     <h2>Création d'API (Interfaces de Programmation d'Applications)</h2>
                     <p>Simplifiez l'intégration de vos systèmes et services avec des interfaces de programmation d'applications (API) puissantes.</p>
-                    <div class="services-btn">
-                        <a routerLink="/services-details" class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
+                    <div class="services-btn" (click)="readMoreInfo('CreatApi')">
+                        <a class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -63,8 +133,8 @@
                     </div>
                     <h2>Refonte d'Applications Web et Sites Web</h2>
                     <p>Modernisez et améliorez votre présence en ligne avec l'aide de notre équipe de spécialistes pour donner une nouvelle vie à votre site web ou à votre application existante.</p>
-                    <div class="services-btn">
-                        <a routerLink="/services-details" class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
+                    <div class="services-btn" (click)="readMoreInfo('refonteWeb')">
+                        <a class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -75,8 +145,8 @@
                     </div>
                     <h2>Création de Dashboards</h2>
                     <p>Visualisez vos données clés en temps réel grâce à des tableaux de bord personnalisés et obtenez des insights précieux pour prendre des décisions éclairées.</p>
-                    <div class="services-btn">
-                        <a routerLink="/services-details" class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
+                    <div class="services-btn" (click)="readMoreInfo('Dashboards')">
+                        <a class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -87,8 +157,8 @@
                     </div>
                     <h2>Mise à jour et Ajout de Fonctionnalités</h2>
                     <p>Gardez votre site web ou votre application à jour avec les dernières technologies en assurant la maintenance et en ajoutant de nouvelles fonctionnalités.</p>
-                    <div class="services-btn">
-                        <a routerLink="/services-details" class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
+                    <div class="services-btn" (click)="readMoreInfo('majEtFonctionnalite')">
+                        <a class="services-btn-one">En savoir plus <i class="flaticon-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -126,6 +196,7 @@
 </section>
 
 <app-subscribe></app-subscribe>
+<app-footer></app-footer>
 } @loading(minimum 1s) {
     <app-loader></app-loader>
 } @error {

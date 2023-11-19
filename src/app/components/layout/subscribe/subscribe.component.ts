@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { UserService } from '../../../service/user.service';
+import { HttpClientModule } from '@angular/common/http'
 
 @Component({
   selector: 'app-subscribe',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
+  providers: [UserService],
   templateUrl: './subscribe.component.html',
   styleUrl: './subscribe.component.scss'
 })
 export class SubscribeComponent {
+  documentLoadedCompleted: any = document.readyState;
   sendEmail = this.fb.group({
     name: [null, Validators.required],
     email: [null, Validators.email],
@@ -41,12 +45,12 @@ export class SubscribeComponent {
     }
 
     if (this.sendEmail.valid && emailRdv.name && emailRdv.email && emailRdv.tel && emailRdv.message) {
-      // this.RUS.postRendezVousByEmail(emailRdv.name, emailRdv.email, emailRdv.tel, emailRdv.message).subscribe((data: { message: any; }) => {
-      //   alert(data.message)
-      // }, (error: { message: any; }) => {
-      //   alert(error.message)
-      // })
+      this.userService.postRendezVousByEmail(emailRdv.name, emailRdv.email, emailRdv.tel, emailRdv.message).subscribe((data: { message: any; }) => {
+        alert(data.message)
+      }, (error: { message: any; }) => {
+        alert(error.message)
+      })
     }
   }
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder, private userService: UserService){}
 }

@@ -1,63 +1,111 @@
 @defer(when documentCompletedLoaded) {
-        <app-navbar></app-navbar>
-    
-    <div class="page-title-area item-bg1">
-        <div class="d-table">
-            <div class="d-table-cell">
-                <div class="container">
-                    <div class="page-title-content">
-                        <h1 class="color-white">Contactez-nous</h1>
-                        <ul>
-                            <li><a routerLink="/">Accueil</a></li>
-                            <li>Contact</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "ContactPage",
+    "name": "Contactez-nous",
+    "description": "Page de contact pour nous joindre.",
+    "url": "https://e-evolutif.fr/contact",
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+            "@id": "https://e-evolutif.fr/",
+            "name": "Accueil"
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https://e-evolutif.fr/contact",
+                "name": "Contact"
+                }
+            }
+        ]
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "11 avenue du concours hippique",
+        "addressLocality": "Roquebrune-cap-martin"
+    },
+        "contactPoint": [
+        {
+            "@type": "ContactPoint",
+            "telephone": "+33 7 80 74 50 23",
+            "contactType": "Service à la clientèle"
+        },
+        {
+            "@type": "ContactPoint",
+            "email": "contact@get-evolutif.xyz",
+            "contactType": "Support technique"
+        }
+    ]
+}
+</script>
+
+<app-navbar></app-navbar>
+
+<div class="page-title-area item-bg1">
+  <div class="d-table">
+    <div class="d-table-cell">
+      <div class="container">
+        <div class="page-title-content">
+          <h1 class="color-white">Contactez-nous</h1>
+          <ul>
+            <li><a routerLink="/">Accueil</a></li>
+            <li>Contact</li>
+          </ul>
         </div>
+      </div>
     </div>
-    
-    <section class="contact-box pt-100 pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-contact-box">
-                        <i class="fa fa-map-marker"></i>
-                        <div class="content-title">
-                            <h2>Adresse</h2>
-                            <p>11 avenue du concours hippique</p>
-                            <p>Roquebrune-cap-martin</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-contact-box">
-                        <i class="fa fa-envelope"></i>
-                        <div class="content-title">
-                            <h2>Email</h2>
-                            <a href="mailto:contact@get-evolutif.xyz">{{email}}</a>
-                            <a href="mailto:contact@get-evolutif.xyz">{{email}}</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-                    <div class="single-contact-box">
-                        <i class="fa fa-phone"></i>
-                        <div class="content-title">
-                            <h2>Téléphone</h2>
-                            <a href="tel:0780745023">+33 7 80 74 50 23</a>
-                            <a href="tel:0780745023">+33 7 80 74 50 23</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  </div>
+</div>
+
+<section class="contact-box pt-100 pb-70">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="single-contact-box">
+          <i class="fa fa-map-marker"></i>
+          <div class="content-title">
+            <h2>Adresse</h2>
+            <p>11 avenue du concours hippique</p>
+            <p>Roquebrune-cap-martin</p>
+          </div>
         </div>
-    </section>
-    
-    <app-subscribe></app-subscribe>
-    
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="single-contact-box">
+          <i class="fa fa-envelope"></i>
+          <div class="content-title">
+            <h2>Email</h2>
+            <a href="mailto:contact@get-evolutif.xyz">{{ email }}</a>
+            <a href="mailto:contact@get-evolutif.xyz">{{ email }}</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
+        <div class="single-contact-box">
+          <i class="fa fa-phone"></i>
+          <div class="content-title">
+            <h2>Téléphone</h2>
+            <a href="tel:0780745023">+33 7 80 74 50 23</a>
+            <a href="tel:0780745023">+33 7 80 74 50 23</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-subscribe></app-subscribe>
+<app-footer></app-footer>
 } @loading(minimum 2s) {
-    <app-loader></app-loader>
+<app-loader></app-loader>
 } @error {
-    <app-error-chargement></app-error-chargement>
+<app-error-chargement></app-error-chargement>
 }

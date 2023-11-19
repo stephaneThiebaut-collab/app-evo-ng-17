@@ -189,187 +189,195 @@
     <div class="container">
         <div class="tab solutions-list-tab">
             <ul class="tabs">
-                <li>
-                    <a href="#">
+                <li class="tabs-clicks">
+                    <a (click)="test('creatApp')">
                         <span>Création app / site Web</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="tabs-clicks">
+                    <a (click)="test('reforge')">
                         <span>Reforge</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="tabs-clicks">
+                    <a (click)="test('SEO')">
                         <span>Referencement naturelle</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="tabs-clicks">
+                    <a (click)="test('assistanceEtConseil')">
                         <span>Assistance et conseil</span>
                     </a>
                 </li>
             </ul>
             <div class="tab_content">
-                <div class="tabs_item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-7 col-md-12">
-                            <div class="tab-solution-content">
-                                <h3>Site web / application web</h3>
-                                <p>
-                                    Avez-vous déjà eu une idée qui vous semblait géniale ou un projet qui vous trotte
-                                    dans la tête ? Que se soit révolutionnaire dans un domaine, dans le but de résoudre
-                                    un problème spécifique ou un concept innovant qui pourrait améliorer la vie de
-                                    certains individus ou bien être une expérience en ligne exceptionnelle ?
-                                    Pourquoi ne pas les réaliser dès à présent? Ne la garder plus pour vous et présentez
-                                    là nous sans plus attendre. Nous sommes là pour la faire naître et vivre avec vous.
-                                    Nous mettrons toutes les technologies web les plus récentes en œuvre pour garantir
-                                    qu’elle soit adaptative et réactive.
-                                </p>
-                                <ul class="tab-list">
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Écoute Active
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Personnalisation
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Test et Amélioration
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Mise a jour des technologies
-                                    </li>
-                                </ul>
-
+                @if (boolCreationSiteWeb) {
+                    <div class="tabs_item">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7 col-md-12">
+                                <div class="tab-solution-content">
+                                    <h3>Site web / application web</h3>
+                                    <p>
+                                        Avez-vous déjà eu une idée qui vous semblait géniale ou un projet qui vous trotte
+                                        dans la tête ? Que se soit révolutionnaire dans un domaine, dans le but de résoudre
+                                        un problème spécifique ou un concept innovant qui pourrait améliorer la vie de
+                                        certains individus ou bien être une expérience en ligne exceptionnelle ?
+                                        Pourquoi ne pas les réaliser dès à présent? Ne la garder plus pour vous et présentez
+                                        là nous sans plus attendre. Nous sommes là pour la faire naître et vivre avec vous.
+                                        Nous mettrons toutes les technologies web les plus récentes en œuvre pour garantir
+                                        qu’elle soit adaptative et réactive.
+                                    </p>
+                                    <ul class="tab-list">
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Écoute Active
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Personnalisation
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Test et Amélioration
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Mise a jour des technologies
+                                        </li>
+                                    </ul>
+    
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="col-lg-5 col-md-12">
-                            <div class="tab-image">
-                                <img src="assets/img/tab-solution.png" width="100%" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tabs_item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-7 col-md-12">
-                            <div class="tab-solution-content">
-                                <h3>Reforge de votre site web</h3>
-                                <p>
-                                    Êtes-vous propriétaire d'un site web vieillissant, dépassé ou non fonctionnel ?
-                                    <br />
-                                    Nous comprenons que votre site web est la vitrine de votre entreprise en ligne, et
-                                    il est essentiel qu'il reflète une image professionnelle, qu'il soit fonctionnel et
-                                    qu'il offre une expérience utilisateur optimale. Cependant, avec les avancées
-                                    constantes dans le monde numérique, les sites web peuvent rapidement devenir
-                                    obsolètes.
-                                    C'est là que nous intervenons. Notre équipe talentueuse de concepteurs web, de
-                                    développeurs et d'experts en expérience utilisateur est prête à donner une nouvelle
-                                    vie à votre site web
-                                </p>
-                                <ul class="tab-list">
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Modernisation du Design
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Optimisation de la Performance
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Mise à Jour du Contenu
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Fonctionnalités Améliorées
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>SEO Optimisé
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-5 col-md-12">
-                            <div class="tab-image">
-                                <img src="assets/img/tab-solution.png" width="100%" alt="image">
+    
+                            <div class="col-lg-5 col-md-12">
+                                <div class="tab-image">
+                                    <img src="assets/img/tab-solution.png" width="100%" alt="image">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="tabs_item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-7 col-md-12">
-                            <div class="tab-solution-content">
-                                <h3>Referencement naturel (SEO)</h3>
-                                <p>
-                                    Le référencement naturel est essentiel pour la réussite en ligne de votre
-                                    entreprise. Il permet d'optimiser votre site web pour les moteurs de recherche tels
-                                    que Google, Bing et Yahoo, ce qui signifie que votre site apparaîtra plus haut dans
-                                    les résultats de recherche pertinents. Cela se traduit par une visibilité accrue,
-                                    plus de trafic sur votre site web et, finalement, plus de clients.
-                                </p>
-                                <ul class="tab-list">
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Analyse Approfondie
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Optimisation On-Page
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Stratégie de Liens
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Amélioration Continue
-                                    </li>
-                                </ul>
+                }
+                @if (boolClickReforge) {
+                    <div class="tabs_item">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7 col-md-12">
+                                <div class="tab-solution-content">
+                                    <h3>Reforge de votre site web</h3>
+                                    <p>
+                                        Êtes-vous propriétaire d'un site web vieillissant, dépassé ou non fonctionnel ?
+                                        <br />
+                                        Nous comprenons que votre site web est la vitrine de votre entreprise en ligne, et
+                                        il est essentiel qu'il reflète une image professionnelle, qu'il soit fonctionnel et
+                                        qu'il offre une expérience utilisateur optimale. Cependant, avec les avancées
+                                        constantes dans le monde numérique, les sites web peuvent rapidement devenir
+                                        obsolètes.
+                                        C'est là que nous intervenons. Notre équipe talentueuse de concepteurs web, de
+                                        développeurs et d'experts en expérience utilisateur est prête à donner une nouvelle
+                                        vie à votre site web
+                                    </p>
+                                    <ul class="tab-list">
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Modernisation du Design
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Optimisation de la Performance
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Mise à Jour du Contenu
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Fonctionnalités Améliorées
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>SEO Optimisé
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="col-lg-5 col-md-12">
-                            <div class="tab-image">
-                                <img src="assets/img/tab-solution.png" width="100%" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tabs_item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-7 col-md-12">
-                            <div class="tab-solution-content">
-                                <h3>Assistance et conseils</h3>
-                                <p>
-                                    Cherchez-vous une assistance et des conseils experts pour votre entreprise ? Nous
-                                    sommes là pour vous aider à chaque étape du chemin. Nous croyons en l'importance de
-                                    l'accompagnement personnalisé et de la réactivité pour répondre à vos besoins
-                                    changeants.
-                                    Lorsque vous choisissez notre équipe d'experts pour vous guider, vous choisissez une
-                                    assistance qui va au-delà des simples conseils. Nous sommes à votre disposition pour
-                                    vous conseiller, vous soutenir et, surtout, pour prendre en compte vos demandes de
-                                    modifications.
-                                </p>
-                                <ul class="tab-list">
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Soutien Personnalisé
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Réactivité
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Mises à Jour Continues
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-tick-1"></i>Suivi des Résultats
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-5 col-md-12">
-                            <div class="tab-image">
-                                <img src="assets/img/tab-solution.png" width="100%" alt="image">
+    
+                            <div class="col-lg-5 col-md-12">
+                                <div class="tab-image">
+                                    <img src="assets/img/tab-solution.png" width="100%" alt="image">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                }
+                @if (boolClickReferencementNaturel) {
+                    <div class="tabs_item">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7 col-md-12">
+                                <div class="tab-solution-content">
+                                    <h3>Referencement naturel (SEO)</h3>
+                                    <p>
+                                        Le référencement naturel est essentiel pour la réussite en ligne de votre
+                                        entreprise. Il permet d'optimiser votre site web pour les moteurs de recherche tels
+                                        que Google, Bing et Yahoo, ce qui signifie que votre site apparaîtra plus haut dans
+                                        les résultats de recherche pertinents. Cela se traduit par une visibilité accrue,
+                                        plus de trafic sur votre site web et, finalement, plus de clients.
+                                    </p>
+                                    <ul class="tab-list">
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Analyse Approfondie
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Optimisation On-Page
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Stratégie de Liens
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Amélioration Continue
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                            <div class="col-lg-5 col-md-12">
+                                <div class="tab-image">
+                                    <img src="assets/img/tab-solution.png" width="100%" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @if (boolClickAssistanceEtConseil) {
+                    <div class="tabs_item">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7 col-md-12">
+                                <div class="tab-solution-content">
+                                    <h3>Assistance et conseils</h3>
+                                    <p>
+                                        Cherchez-vous une assistance et des conseils experts pour votre entreprise ? Nous
+                                        sommes là pour vous aider à chaque étape du chemin. Nous croyons en l'importance de
+                                        l'accompagnement personnalisé et de la réactivité pour répondre à vos besoins
+                                        changeants.
+                                        Lorsque vous choisissez notre équipe d'experts pour vous guider, vous choisissez une
+                                        assistance qui va au-delà des simples conseils. Nous sommes à votre disposition pour
+                                        vous conseiller, vous soutenir et, surtout, pour prendre en compte vos demandes de
+                                        modifications.
+                                    </p>
+                                    <ul class="tab-list">
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Soutien Personnalisé
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Réactivité
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Mises à Jour Continues
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-tick-1"></i>Suivi des Résultats
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                            <div class="col-lg-5 col-md-12">
+                                <div class="tab-image">
+                                    <img src="assets/img/tab-solution.png" width="100%" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </div>

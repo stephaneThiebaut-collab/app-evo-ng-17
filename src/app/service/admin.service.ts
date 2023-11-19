@@ -6,8 +6,8 @@ import { Observable, catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class AdminService {
-  // private url: string = `https://get-evolutif.xyz/login1`;
-  private url: string = `http://localhost:3000/login1`;
+  private url: string = `https://get-evolutif.xyz/login1`;
+  // private url: string = `http://localhost:3000/login1`;
 
 
   getAllTicket(): Observable<any>{
