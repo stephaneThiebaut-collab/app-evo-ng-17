@@ -16,5 +16,10 @@ import { FooterComponent } from '../../layout/footer/footer.component';
 export class ContactComponent {
   documentCompletedLoaded: any = this.document.readyState;
   email: string = 'contact@get-evolutif.xyz';
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.document.title = "Evolutif - contact";
+  }
   constructor(@Inject(DOCUMENT) private document: Document){}
 }

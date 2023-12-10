@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { UserService } from '../../../../service/user.service';
 
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -23,7 +23,7 @@ import { FooterComponent } from '../../../layout/footer/footer.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AllsTicketClientComponent {
-  loadedCompleted: any = document.readyState;
+  loadedCompleted: any = this.document.readyState;
   ticket!: Array<Ticket>;
   FormIsVisible: boolean = false;
   chooseOption!: Array<{ id: number, title: string }>;
@@ -32,13 +32,17 @@ export class AllsTicketClientComponent {
     descriptif: [null, Validators.required]
   })
   ngOnInit(){
-    
+    this.document.title = "Evolutif - Ticket"
     this.chooseOption = this.userService.chooseOption;
     this.userService.AllTicket().subscribe((data) => {
       this.ticket = data
       return this.ticket
     }, err => {
-      console.log(err)
+      alert('Vous devez être connecter');
+      if (typeof window.localStorage !== 'undefined') {
+        localStorage.removeItem('token');
+        this.router.navigateByUrl('/')
+      }
     })
   }
   goToTicket(uuid_ticket: string){
@@ -69,5 +73,5 @@ export class AllsTicketClientComponent {
       })
     }
   }
-  constructor(private userService: UserService, private router: Router, private fb: FormBuilder){}
+  constructor(private userService: UserService, private router: Router, private fb: FormBuilder, @Inject(DOCUMENT) private document: Document){}
 }

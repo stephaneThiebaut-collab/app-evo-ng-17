@@ -1,4 +1,27 @@
-@defer {
+@defer (when DocumentIsReady) {
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebPage",
+            "name": "Evolutif - Création d'applications Web et de Sites Internet",
+            "description": "Votre application web ou votre site internet peuvent devenir l'un de vos atouts les plus précieux pour votre entreprise. Ils représentent une référence de vos services, regroupent vos contacts, et servent d'outil de communication essentiel.",
+            "author": {
+                "@type": "Organization",
+                "name": "evolutif"
+            },
+            "about": {
+                "@type": "WebPage",
+                "name": "À Propos",
+                "description": "Notre équipe de développeurs spécialisés dans la conception de sites web est prête à mettre à votre disposition sa créativité, son savoir-faire, ses connaissances et sa maîtrise des dernières techniques."
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+33780745023",
+                "email": "contact@get-evolutif.xyz",
+                "contactType": "customer service"
+            }
+        }
+    </script>
 <app-navbar></app-navbar>
 <div class="main-banner-area">
     <div class="d-table">
@@ -86,6 +109,12 @@
                         </li>
                         <li>
                             <i class="flaticon-tick"></i>Déploiement
+                        </li>
+                        <li>
+                            <i class="flaticon-tick"></i>Création d'application mobile android
+                        </li>
+                        <li>
+                            <i class="flaticon-tick"></i>Création de logiciel
                         </li>
                     </ul>
                     <div class="about-btn">

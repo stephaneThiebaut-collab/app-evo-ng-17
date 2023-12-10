@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
@@ -15,10 +15,13 @@ export class NavbarComponent {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    if (localStorage.getItem('token')) {
-      this.ongletConnection = !this.ongletConnection;
-    } else {
-      this.ongletConnection = this.ongletConnection;
+
+    if (typeof window.localStorage !== 'undefined') {
+      if (localStorage.getItem('token')) {
+        this.ongletConnection = !this.ongletConnection;
+      } else {
+        this.ongletConnection = this.ongletConnection;
+      }
     }
   }
 

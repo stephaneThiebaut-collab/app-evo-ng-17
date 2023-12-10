@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { NavbarComponent } from '../../layout/navbar/navbar.component';
 import { LoaderComponent } from '../../layout/loader/loader.component';
@@ -13,9 +13,11 @@ import { FooterComponent } from '../../layout/footer/footer.component';
   styleUrl: './about.component.scss'
 })
 export class AboutComponent {
+  DocumentIsReady: any = this.document.readyState;
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
+    this.document.title = 'Evolutif - A propos';
   }
-constructor(private elementRef: ElementRef, @Inject(DOCUMENT) private document: Document){}
+constructor(@Inject(DOCUMENT) private document: Document){}
 }

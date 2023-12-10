@@ -9,6 +9,7 @@ import { DataOneTicket } from '../../../../interface/data-one-ticket';
 import { ReponseTicket } from '../../../../interface/reponse-ticket';
 import { ErrorChargementComponent } from '../../error-chargement/error-chargement.component';
 import { FooterComponent } from '../../../layout/footer/footer.component';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -35,13 +36,19 @@ export class OneTicketByUuidComponent {
       this.object_service = data.map((obj: { object_service: any; }) => { return obj.object_service });
       this.descriptif = data.map((obj: { descriptif: any; }) => { return obj.descriptif });
     }, error => {
-      alert(error.message)
+      if (typeof window.localStorage !== 'undefined') {
+        localStorage.removeItem('token');
+        this.router.navigateByUrl('/')
+      }
     })
     this.userService.getReponseTicket(this.idTicket).subscribe(data => {
       this.dataReponse = data;
       this.nbrReponse = data.length;
     }, error => {
-      alert(error.message)
+      if (typeof window.localStorage !== 'undefined') {
+        localStorage.removeItem('token');
+        this.router.navigateByUrl('/')
+      }
     })
   }
   submitMessageTicket(){
@@ -57,5 +64,5 @@ export class OneTicketByUuidComponent {
     }
   }
 
-constructor(private userService: UserService, private fb: FormBuilder){}
+constructor(private userService: UserService, private fb: FormBuilder, private router: Router){}
 }

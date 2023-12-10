@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { LoaderComponent } from '../../layout/loader/loader.component';
 import { NavbarComponent } from '../../layout/navbar/navbar.component';
 import { FooterComponent } from '../../layout/footer/footer.component';
@@ -19,7 +19,8 @@ export class HomeComponent {
   boolCreationSiteWeb: boolean = true;
   boolClickReforge: boolean = false;
   boolClickReferencementNaturel: boolean = false;
-  boolClickAssistanceEtConseil: boolean = false
+  boolClickAssistanceEtConseil: boolean = false;
+  DocumentIsReady: any = this.document.readyState;
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
@@ -55,5 +56,5 @@ export class HomeComponent {
     }
   }
 
-  constructor(){}
+  constructor(@Inject(DOCUMENT) private document: Document){}
 }

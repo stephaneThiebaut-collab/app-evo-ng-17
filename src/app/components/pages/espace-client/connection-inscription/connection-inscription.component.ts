@@ -56,6 +56,7 @@ export class ConnectionInscriptionComponent {
       }, (error: { message: any; }) => {
         this.isLoading = false
         alert(error.message)
+        console.log(error.message)
       })
     }
   }
@@ -81,6 +82,7 @@ export class ConnectionInscriptionComponent {
       }, (err: { message: any; }) => {
         this.isLoading = false
         alert(err.message)
+        console.log(err.message)
       })
     }
   }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ServicesDetailComponent } from './services-detail.component';
+import { OptiSeoComponent } from './opti-seo.component';
 
-describe('ServicesDetailComponent', () => {
-  let component: ServicesDetailComponent;
-  let fixture: ComponentFixture<ServicesDetailComponent>;
+describe('OptiSeoComponent', () => {
+  let component: OptiSeoComponent;
+  let fixture: ComponentFixture<OptiSeoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ServicesDetailComponent]
+      imports: [OptiSeoComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ServicesDetailComponent);
+    fixture = TestBed.createComponent(OptiSeoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
